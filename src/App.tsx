@@ -3,6 +3,7 @@ import {TileProvider} from "./Context/TileContext.tsx";
 import {SpeedProvider} from "./Context/speedContext.tsx";
 import {Grid} from "./Components/grid.tsx";
 import {useRef} from "react";
+import {Nav} from "./Components/Nav.tsx";
 
 function App() {
     const isVisualizationRunningRef = useRef<boolean>(false)
@@ -12,6 +13,7 @@ function App() {
           <TileProvider>
               <SpeedProvider>
           <div className="h-screen w-screen flex flex-col">
+            <Nav/>
             <Grid isVisualizationRunningRef={isVisualizationRunningRef}/>
           </div>
               </SpeedProvider>

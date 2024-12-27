@@ -1,0 +1,29 @@
+.Navbar{
+    display: flex;
+    background-color: rgb(30, 30, 30);
+    height: 7%;
+    width: 100%;
+    border-bottom: 6px black solid;
+    align-items: center;
+    justify-content: center;
+}
+
+.Title{
+    font-size: 2rem;
+    font-weight: bold;
+    padding-right: 9px;
+}
+
+.Author{
+    color: lightblue;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.Namebar{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-right: 4px black solid;
+}
