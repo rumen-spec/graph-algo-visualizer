@@ -64,7 +64,7 @@ export function Grid({
                             tile;
                         return (
                             <Tile
-                                // key={tileIndex}
+                                key={tileIndex}
                                 row={tile.row}
                                 col={tile.col}
                                 isEnd={isEnd}

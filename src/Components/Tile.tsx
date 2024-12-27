@@ -7,28 +7,32 @@ import {
 } from "../util/consts.ts";
 import {twMerge} from "tailwind-merge";
 
+interface MouseFunction{
+    (row: number, col: number): void
+}
 export function Tile({
-    row,
-    col,
-    isStart,
-    isEnd,
-    isPath,
-    isTraversed,
-    isWall,
-    handleMouseUp,
-    handleMouseDown,
-    handleMouseEnter,
-                     }:{
+                         row,
+                         col,
+                         isStart,
+                         isEnd,
+                         isPath,
+                         isTraversed,
+                         isWall,
+                         handleMouseUp,
+                         handleMouseDown,
+                         handleMouseEnter,
+                     }: {
     row: number,
     col: number,
-    isStart: boolean
-    isEnd: boolean
-    isPath: boolean
-    isTraversed: boolean
-    isWall: boolean
-    handleMouseDown: MouseFunction;
-    handleMouseUp: MouseFunction;
-    handleMouseEnter: MouseFunction;
+    isStart: boolean,
+    isEnd: boolean,
+    isPath: boolean,
+    isTraversed: boolean,
+    isWall: boolean,
+    handleMouseDown: MouseFunction,
+    handleMouseUp: MouseFunction,
+    handleMouseEnter: MouseFunction,
+    key?: number
 }) {
     let tileTyleStyle;
 
