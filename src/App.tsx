@@ -1,10 +1,20 @@
+import {PathFindingProvider} from "./Context/PathFindingContext.tsx";
+import {TileProvider} from "./Context/TileContext.tsx";
+import {SpeedProivder} from "./Context/speedContext.tsx";
+import {Grid} from "./Components/grid.tsx";
 
 function App() {
 
   return (
-      <h1 className="text-3xl font-bold underline h-screen w-screen bg-blue-400">
-          Hello world!
-      </h1>
+      <PathFindingProvider>
+          <TileProvider>
+              <SpeedProivder>
+          <div className="h-screen w-screen flex flex-col">
+            <Grid/>
+          </div>
+              </SpeedProivder>
+          </TileProvider>
+    </PathFindingProvider>
   )
 }
 
