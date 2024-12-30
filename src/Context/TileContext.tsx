@@ -1,4 +1,4 @@
-import {TileType} from "../util/Types.ts";
+import {TileType} from "../util/types.ts";
 import {createContext, ReactNode, useState} from "react";
 import {endTileConfig, startTileConfig} from "../util/consts.ts";
 
