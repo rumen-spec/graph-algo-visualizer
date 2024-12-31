@@ -25,12 +25,14 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    /*border-right: 4px black solid;*/
+    border-right: 4px black solid;
 }
 
 .Selectbar{
     height: 100%;
-    align-items: center;
+    width: 28%;
+    align-items: self-end;
+    padding-bottom: 5px;
     display: flex;
     justify-content: space-between;
     padding-left: 10px;
