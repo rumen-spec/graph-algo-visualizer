@@ -3,7 +3,7 @@ import {Select} from "./Select.tsx";
 import {usePathFinding} from "../hooks/usePathFindingHook.tsx";
 import {EXTENDED_SLEEP_TIME, MAZES, PATH_FINDING_ALGORITHMS, SLEEP_TIME, SPEEDS,} from "../util/consts.ts";
 import {useSpeed} from "../hooks/useSpeed.tsx";
-import {AlgorithmType, GridType, MazeType} from "../util/types.ts";
+import {AlgorithmType, MazeType, SpeedType} from "../util/types.ts";
 import {reset} from "../util/reset.tsx";
 import {useTile} from "../hooks/useTile.tsx";
 import {MutableRefObject, useState} from "react";
@@ -16,7 +16,7 @@ import {runPathfindingAlgorithm} from "../util/runPathFInding.ts";
 export function Nav({isVisualizationRunningRef}: {isVisualizationRunningRef: MutableRefObject<boolean> }) {
     const [isDisabled, setIsDisabled] = useState<boolean>(false);
     const {maze, setMaze, grid, setGrid, setIsGraphVisualized, isGraphVisualized, algorithm, setAlgorithm} = usePathFinding()
-    const {speed} = useSpeed()
+    const {speed, setSpeed} = useSpeed()
     const {startTile, endTile} = useTile()
 
     const handlerRunVisualizer = () => {
@@ -42,13 +42,13 @@ export function Nav({isVisualizationRunningRef}: {isVisualizationRunningRef: Mut
             setIsGraphVisualized(true);
             setIsDisabled(false);
             isVisualizationRunningRef.current = false;
-        }, SLEEP_TIME * (traversedTiles.length + SLEEP_TIME * 2) + EXTENDED_SLEEP_TIME * (path.length + 30) * SPEEDS.find((s) => s.value === speed)!.value);
+        }, SLEEP_TIME * (traversedTiles.length + SLEEP_TIME * 2) + EXTENDED_SLEEP_TIME * (path.length + 60) * SPEEDS.find((s) => s.value === speed)!.value);
     }
 
     function GenerateMaze(maze: MazeType) {
+        reset({grid, startTile, endTile})
         if (maze == "NONE") {
             setMaze(maze)
-            reset({grid, startTile, endTile})
             return
         }
 
@@ -90,7 +90,8 @@ export function Nav({isVisualizationRunningRef}: {isVisualizationRunningRef: Mut
                     options={PATH_FINDING_ALGORITHMS}/>
                 <Select
                     value={speed}
-                    onChange={()=>{
+                    onChange={(e)=>{
+                        setSpeed(parseInt(e.target.value) as SpeedType)
                     }}
                     label="Speed"
                     isDisabled={isDisabled}

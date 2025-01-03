@@ -1,8 +1,8 @@
-// import { aStar } from "../algorithms/pathfinding/aStar";
-import { bfs } from "../algorithms/pathfinding/bfs";
-// import { dfs } from "../algorithms/pathfinding/dfs";
-// import { dijkstra } from "../algorithms/pathfinding/dijkstra";
+import { bfs } from "../Algorithms/PathFinding/bfs.ts";
 import { AlgorithmType, GridType, TileType } from "./types";
+import {dfs} from "../Algorithms/PathFinding/dfs.ts";
+import {dijkstra} from "../Algorithms/PathFinding/dijkstra.ts";
+import {aStar} from "../Algorithms/PathFinding/aStar.ts";
 
 export const runPathfindingAlgorithm = ({
                                             algorithm,
