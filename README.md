@@ -1,5 +1,5 @@
 # Graph Path Finding Visiualizer
-[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue?logo=github)](https://rumen-spec.github.io/pathfinding_visualizer/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue?logo=github)](https://rumen-spec.github.io/graph-algo-visualizer/)
 
 ## Overview
 
