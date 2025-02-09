@@ -23,6 +23,7 @@ export function Nav({isVisualizationRunningRef}: {isVisualizationRunningRef: Mut
         if (isGraphVisualized) {
             setIsGraphVisualized(false);
             reset({grid: grid.slice(), startTile, endTile});
+            setMaze("NONE")
             return;
         }
 
